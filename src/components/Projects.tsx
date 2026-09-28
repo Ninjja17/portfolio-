@@ -1,8 +1,12 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Sparkles, ShieldAlert, Cpu, Activity, CheckCircle2 } from "lucide-react";
+import { BorderBeam } from "./ui/BorderBeam";
+import { MagneticButton } from "./ui/MagneticButton";
+import { TextScramble } from "./ui/TextScramble";
+import { SquareArchitectureGraph } from "./ui/SquareArchitectureGraph";
 
 function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -72,7 +76,7 @@ const pillars = [
     number: "02",
     icon: ShieldAlert,
     title: "Adverse Stress Simulation Matrix",
-    desc: "Subjects agent teams to synthetic chaos engineering — testing timeouts, hallucinations, external outages, and concurrency spikes before production.",
+    desc: "Subjects agent teams to synthetic chaos engineering - testing timeouts, hallucinations, external outages, and concurrency spikes before production.",
     tech: ["IBM watsonx", "Chaos Testing", "Python 3.11+"],
   },
   {
@@ -97,7 +101,7 @@ export default function Projects() {
           <div>
             <div className="flex items-center gap-2 mb-2 sm:mb-3 font-mono text-[11px] sm:text-xs tracking-widest text-black/50 uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-black" />
-              <span>PORTFOLIO & PRODUCTIONS</span>
+              <TextScramble text="PORTFOLIO & PRODUCTIONS" />
             </div>
             <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-black text-[#111] tracking-tight">
               Featured Work
@@ -106,20 +110,23 @@ export default function Projects() {
           <span className="font-mono text-xs sm:text-sm text-black/50">( 01 )</span>
         </div>
 
-        {/* Flagship Showcase Card */}
+        {/* Flagship Showcase Card with Inspira UI Border Beam */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-2xl sm:rounded-3xl bg-[#f2ede4] border border-black/[0.08] p-5 sm:p-8 md:p-10 flex flex-col gap-6 sm:gap-8 shadow-sm"
+          className="relative rounded-2xl sm:rounded-3xl bg-[#f2ede4] border border-black/[0.08] p-5 sm:p-8 md:p-10 flex flex-col gap-6 sm:gap-8 shadow-sm overflow-hidden"
         >
+          {/* Feature 1: Inspira UI Border Beam */}
+          <BorderBeam duration={12} colorFrom="#10b981" colorTo="#3b82f6" borderWidth={1.5} />
+
           {/* Top Meta & Badges */}
-          <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 border-b border-black/[0.08] pb-5 sm:pb-6">
+          <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 border-b border-black/[0.08] pb-5 sm:pb-6 relative z-10">
             <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
               <span className="inline-flex items-center gap-1.5 font-mono text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 rounded-full bg-[#111] text-[#faf7f3]">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                🏆 2nd Place Winner @ HACKON
+                <span>🏆 2nd Place Winner @ HACKON</span>
               </span>
               <span className="font-mono text-[11px] sm:text-xs text-black/70 bg-black/[0.05] border border-black/[0.06] px-2.5 sm:px-3 py-1 rounded-full">
                 Built by Shibani With IBM BoB
@@ -129,32 +136,37 @@ export default function Projects() {
               </span>
             </div>
 
-            {/* Quick External Links */}
+            {/* Feature 2: Animate UI Magnetic Buttons */}
             <div className="flex items-center gap-2 sm:gap-3">
-              <a
-                href="https://github.com/Ninjja17/SQUARE"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-black/75 hover:text-black transition-colors px-2.5 sm:px-3 py-1.5 rounded-lg hover:bg-black/[0.05]"
-              >
-                <GithubIcon className="w-4 h-4" />
-                <span>GitHub</span>
-                <ArrowUpRight className="w-3 h-3 text-black/40" />
-              </a>
-              <a
-                href="https://square-beryl.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#faf7f3] bg-[#111] hover:bg-black transition-all px-3 sm:px-3.5 py-1.5 rounded-lg shadow-sm hover:scale-105"
-              >
-                <span>Live Demo</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              <MagneticButton strength={0.25}>
+                <a
+                  href="https://github.com/Ninjja17/SQUARE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-black/75 hover:text-black transition-colors px-2.5 sm:px-3 py-1.5 rounded-lg hover:bg-black/[0.05]"
+                >
+                  <GithubIcon className="w-4 h-4" />
+                  <span>GitHub</span>
+                  <ArrowUpRight className="w-3 h-3 text-black/40" />
+                </a>
+              </MagneticButton>
+
+              <MagneticButton strength={0.3}>
+                <a
+                  href="https://square-beryl.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#faf7f3] bg-[#111] hover:bg-black transition-all px-3 sm:px-3.5 py-1.5 rounded-lg shadow-sm hover:scale-105"
+                >
+                  <span>Live Demo</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </MagneticButton>
             </div>
           </div>
 
           {/* Project Title & Overview */}
-          <div className="space-y-2 sm:space-y-3">
+          <div className="space-y-2 sm:space-y-3 relative z-10">
             <h3 className="font-display text-2xl sm:text-4xl md:text-5xl font-black text-[#111] tracking-tight">
               SQUARE
             </h3>
@@ -166,8 +178,8 @@ export default function Projects() {
             </p>
           </div>
 
-          {/* Screenshot Switcher Navigation Tabs - Mobile horizontal swipe without vertical stacking */}
-          <div className="flex gap-2 pt-2 overflow-x-auto pb-1 no-scrollbar sm:flex-wrap">
+          {/* Screenshot Switcher Navigation Tabs with Feature 3: Text Scramble Cipher */}
+          <div className="flex gap-2 pt-2 overflow-x-auto pb-1 no-scrollbar sm:flex-wrap relative z-10">
             {screenshotViews.map((view) => {
               const isActive = activeTab === view.id;
               return (
@@ -183,7 +195,7 @@ export default function Projects() {
                   <span>{view.label}</span>
                   {isActive && (
                     <span className="ml-1.5 sm:ml-2 text-[9px] sm:text-[10px] uppercase font-bold text-amber-300">
-                      • {view.tag}
+                      • <TextScramble text={view.tag} trigger={activeTab} />
                     </span>
                   )}
                 </button>
@@ -192,7 +204,7 @@ export default function Projects() {
           </div>
 
           {/* Interactive Screen Preview with Hover/Touch Pill */}
-          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border border-black/[0.1] bg-black/[0.02] shadow-inner">
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border border-black/[0.1] bg-black/[0.02] shadow-inner z-10">
             <a
               href="https://square-beryl.vercel.app/"
               target="_blank"
@@ -215,11 +227,11 @@ export default function Projects() {
               {/* Floating Live Pill */}
               <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-black/80 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-mono px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full flex items-center gap-1.5 sm:gap-2 border border-white/10">
                 <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Live Screenshot</span>
+                <span>Live Project Screenshot</span>
               </div>
 
-              {/* Hover/Tap Pill CTA - always visible on mobile, hover-animated on desktop */}
-              <div className="absolute bottom-3 sm:bottom-5 right-3 sm:bottom-5 bg-[#111] text-[#faf7f3] text-[11px] sm:text-xs font-semibold px-3 sm:px-4 py-1.5 sm:py-2.5 rounded-full flex items-center gap-1.5 sm:gap-2 opacity-90 sm:opacity-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-300 shadow-2xl border border-white/20">
+              {/* Hover Pill CTA */}
+              <div className="absolute bottom-4 sm:bottom-5 right-4 sm:right-5 bg-[#111] text-[#faf7f3] text-xs font-semibold px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full flex items-center gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-2xl border border-white/20">
                 <span>Open Live Platform</span>
                 <ArrowUpRight className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
               </div>
@@ -247,11 +259,16 @@ export default function Projects() {
             </div>
           </div>
 
+          {/* Feature 4: Inspira UI Animated Beam - Multi-Agent Architecture Graph */}
+          <div className="relative z-10 pt-2">
+            <SquareArchitectureGraph />
+          </div>
+
           {/* Technical Architecture Breakdown */}
-          <div className="pt-2 sm:pt-4 border-t border-black/[0.08]">
+          <div className="pt-2 sm:pt-4 border-t border-black/[0.08] relative z-10">
             <div className="flex items-center gap-2 mb-4 sm:mb-6 font-mono text-[11px] sm:text-xs tracking-wider text-black/50 uppercase">
               <CheckCircle2 className="w-3.5 h-3.5 text-black" />
-              <span>CORE ARCHITECTURAL MODULES</span>
+              <TextScramble text="CORE ARCHITECTURAL MODULES" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
@@ -296,7 +313,7 @@ export default function Projects() {
           </div>
 
           {/* Full Tech Stack Footer Tags */}
-          <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-black/[0.08]">
+          <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-black/[0.08] relative z-10">
             <div className="flex flex-wrap gap-1 sm:gap-1.5">
               {[
                 "Next.js 14 (App Router)",
@@ -318,32 +335,36 @@ export default function Projects() {
             </div>
 
             <div className="flex items-center gap-3 w-full sm:w-auto">
-              <a
-                href="https://github.com/Ninjja17/SQUARE"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#111] text-white text-xs font-semibold hover:bg-black transition-all hover:scale-105 shadow-md"
-              >
-                <GithubIcon className="w-3.5 h-3.5" />
-                <span>Explore Source Code</span>
-                <ArrowUpRight className="w-3 h-3" />
-              </a>
+              <MagneticButton strength={0.25} className="w-full sm:w-auto">
+                <a
+                  href="https://github.com/Ninjja17/SQUARE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#111] text-white text-xs font-semibold hover:bg-black transition-all hover:scale-105 shadow-md"
+                >
+                  <GithubIcon className="w-3.5 h-3.5" />
+                  <span>Explore Source Code</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </MagneticButton>
             </div>
           </div>
 
         </motion.div>
 
-        {/* GitHub Explorer Link */}
+        {/* GitHub Explorer Link with Magnetic Hover */}
         <div className="mt-10 sm:mt-14 flex justify-center">
-          <a
-            href="https://github.com/Ninjja17"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-[#111] text-white text-xs sm:text-sm font-semibold hover:bg-black transition-all hover:scale-105 shadow-xl group"
-          >
-            <span>Explore Ninjja17 on GitHub</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+          <MagneticButton strength={0.35} className="w-full sm:w-auto flex justify-center">
+            <a
+              href="https://github.com/Ninjja17"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-[#111] text-white text-xs sm:text-sm font-semibold hover:bg-black transition-all hover:scale-105 shadow-xl group"
+            >
+              <span>Explore Ninjja17 on GitHub</span>
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </MagneticButton>
         </div>
 
       </div>
