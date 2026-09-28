@@ -31,11 +31,11 @@ export default function ScrollRevealAbout() {
   const words = paragraph.split(" ");
 
   return (
-    <section id="about" ref={containerRef} className="py-36 px-6 sm:px-12 border-t border-b border-black/[0.08]">
+    <section id="about" ref={containerRef} className="py-20 sm:py-36 px-6 sm:px-12 border-t border-b border-black/[0.08]">
       <div className="max-w-5xl mx-auto">
         
         {/* Meta Header */}
-        <div className="flex items-center gap-2 mb-12 font-mono text-xs tracking-widest text-black/50 uppercase">
+        <div className="flex items-center gap-2 mb-8 sm:mb-12 font-mono text-[11px] sm:text-xs tracking-widest text-black/50 uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-black" />
           <span>ABOUT & PHILOSOPHY</span>
         </div>

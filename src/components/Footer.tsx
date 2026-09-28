@@ -37,16 +37,16 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative bg-[#0d0d0d] text-white pt-24 sm:pt-28 pb-10 px-6 sm:px-12 mt-28 rounded-t-[36px] sm:rounded-t-[48px] overflow-hidden border-t border-white/10"
+      className="relative bg-[#0d0d0d] text-white pt-16 sm:pt-28 pb-8 sm:pb-10 px-5 sm:px-12 mt-16 sm:mt-28 rounded-t-[28px] sm:rounded-t-[48px] overflow-hidden border-t border-white/10"
     >
       <div className="max-w-7xl mx-auto">
         
-        {/* Top 3-Column Content (Exact Majd Layout) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start relative z-10">
+        {/* Top 3-Column Content */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-8 items-start relative z-10">
           
           {/* Left Column: Bold Headline */}
           <div className="md:col-span-5">
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.08] max-w-sm">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.08] max-w-sm">
               Scaling<br />
               Start-ups<br />
               for Growth.
@@ -55,28 +55,28 @@ export default function Footer() {
 
           {/* Middle Column: Quick links with White Pill Badges */}
           <div className="md:col-span-4">
-            <span className="font-mono text-sm sm:text-base text-white/50 tracking-normal block mb-5 font-normal">
+            <span className="font-mono text-xs sm:text-sm text-white/50 tracking-normal block mb-3 sm:mb-5 font-normal">
               /Quick links
             </span>
             
-            <div className="flex flex-col gap-2.5 max-w-xs">
+            <div className="flex flex-col gap-2 max-w-xs">
               {/* Row 1 */}
               <div className="flex flex-wrap gap-2">
                 <a
                   href="#hero"
-                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-4 py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
+                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
                 >
                   Home
                 </a>
                 <a
                   href="#about"
-                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-4 py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
+                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
                 >
                   About Me
                 </a>
                 <a
                   href="#certifications"
-                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-4 py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
+                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
                 >
                   Services
                 </a>
@@ -86,13 +86,13 @@ export default function Footer() {
               <div className="flex flex-wrap gap-2">
                 <a
                   href="#work"
-                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-4 py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
+                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
                 >
                   Works
                 </a>
                 <a
                   href="#contact"
-                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-4 py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
+                  className="bg-white text-[#111] text-xs sm:text-[13px] font-semibold px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl hover:bg-white/90 hover:scale-105 transition-all shadow-sm"
                 >
                   Contact
                 </a>
@@ -102,11 +102,11 @@ export default function Footer() {
 
           {/* Right Column: /Contact */}
           <div className="md:col-span-3">
-            <span className="font-mono text-sm sm:text-base text-white/50 tracking-normal block mb-5 font-normal">
+            <span className="font-mono text-xs sm:text-sm text-white/50 tracking-normal block mb-3 sm:mb-5 font-normal">
               /Contact
             </span>
             
-            <div className="flex flex-col gap-2 mb-3">
+            <div className="flex flex-col gap-1.5 mb-3">
               <button
                 onClick={handleCopyEmail}
                 className="text-white text-sm sm:text-base font-normal hover:text-white/80 transition-colors text-left group cursor-pointer"
@@ -149,15 +149,15 @@ export default function Footer() {
 
         </div>
 
-        {/* Giant Watermark Typography (Exact Majd Layout) */}
-        <div className="w-full overflow-hidden select-none pointer-events-none mt-14 sm:mt-20 -mb-4 sm:-mb-6">
-          <h1 className="font-display font-[900] text-[clamp(80px,18vw,260px)] text-white/[0.08] leading-none tracking-[-0.04em] text-center w-full uppercase">
+        {/* Giant Watermark Typography */}
+        <div className="w-full overflow-hidden select-none pointer-events-none mt-10 sm:mt-20 -mb-2 sm:-mb-6">
+          <h1 className="font-display font-[900] text-[clamp(48px,16vw,260px)] text-white/[0.08] leading-none tracking-[-0.04em] text-center w-full uppercase">
             SHIBANI
           </h1>
         </div>
 
         {/* Bottom Bar with Clock */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-white/10 text-xs text-white/40 font-medium">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-6 border-t border-white/10 text-[11px] sm:text-xs text-white/40 font-medium">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>Bengaluru, Karnataka, India</span>
@@ -189,4 +189,3 @@ export default function Footer() {
     </footer>
   );
 }
-
