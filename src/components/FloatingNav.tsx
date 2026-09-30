@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MoreHorizontal, X, ArrowUpRight, Code, Sparkles, Briefcase, Award, Mail } from "lucide-react";
+import { MoreHorizontal, X, ArrowUpRight, Code, Sparkles, Briefcase, Award, Mail, Cpu } from "lucide-react";
 
 export default function FloatingNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +18,7 @@ export default function FloatingNav() {
 
   const navLinks = [
     { name: "Home", href: "#hero", icon: Sparkles },
+    { name: "Skills", href: "#skills", icon: Cpu },
     { name: "Work", href: "#work", icon: Code },
     { name: "About", href: "#about", icon: Briefcase },
     { name: "Certifications", href: "#certifications", icon: Award },
@@ -70,7 +71,7 @@ export default function FloatingNav() {
                 <span className="text-white/50 font-mono">STATUS</span>
                 <span className="text-emerald-400 font-medium flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  Wipro • Open to AI Roles
+                  Wipro â€¢ Open to AI Roles
                 </span>
               </div>
 
