@@ -2,49 +2,64 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #faf7f3;
-  --bg-card: #f2ede4;
-  --bg-card-inner: #ece6db;
+  --bg-primary: #e1e6fa;
+  --bg-card: rgba(255, 255, 255, 0.72);
+  --bg-card-inner: rgba(255, 255, 255, 0.65);
   --text-main: #111111;
-  --text-secondary: rgba(17, 17, 17, 0.65);
-  --text-muted: rgba(17, 17, 17, 0.45);
-  --border-subtle: rgba(17, 17, 17, 0.08);
-  --border-strong: rgba(17, 17, 17, 0.18);
+  --text-secondary: rgba(17, 17, 17, 0.7);
+  --text-muted: rgba(17, 17, 17, 0.48);
+  --border-subtle: rgba(135, 153, 251, 0.22);
+  --border-strong: rgba(135, 153, 251, 0.38);
   --pill-bg: #111111;
-  --pill-text: #faf7f3;
+  --pill-text: #ffffff;
   --accent-red: #eb4d6d;
   --accent-green: #10b981;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-primary);
   color: var(--text-main);
   font-family: 'Inter', sans-serif;
 }
 
 body {
-  background-color: var(--bg-primary);
   color: var(--text-main);
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* Background grid pattern */
+/* Total Background: Extracted Ethereal Periwinkle & Lavender Gradient Grades */
 body::before {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 95% 65% at 50% -12%, #ffffff 0%, rgba(225, 230, 250, 0.85) 40%, transparent 80%),
+    radial-gradient(circle at 50% 88%, rgba(135, 153, 251, 0.42) 0%, rgba(160, 177, 249, 0.22) 42%, transparent 72%),
+    radial-gradient(ellipse 70% 50% at 18% 65%, rgba(147, 165, 247, 0.32) 0%, transparent 62%),
+    radial-gradient(ellipse 70% 50% at 82% 65%, rgba(147, 165, 247, 0.32) 0%, transparent 62%),
+    linear-gradient(180deg, #dee3f9 0%, #dce0f9 22%, #c4ccfa 48%, #b2befa 70%, #93a5f7 88%, #8799fb 100%);
+}
+
+/* Subtle Architectural Grid Overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
   background-image: 
-    linear-gradient(rgba(17, 17, 17, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 17, 17, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(17, 17, 17, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.024) 1px, transparent 1px);
   background-size: 40px 40px;
-  z-index: 0;
 }
 
 .font-display {
@@ -54,7 +69,6 @@ body::before {
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
-
 
 /* Continuous Infinite Marquee Animations */
 @keyframes marquee {

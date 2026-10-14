@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Marquee } from "./ui/Marquee";
-import { Network, Sparkles, Activity } from "lucide-react";
+import { Network, Activity } from "lucide-react";
 
 interface SkillItem {
   name: string;
@@ -58,7 +58,7 @@ const trackTwoSkills: SkillItem[] = [
 
 function SkillPill({ skill }: { skill: SkillItem }) {
   return (
-    <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#f2ede4] border border-black/[0.08] hover:border-black/30 hover:bg-white text-[#111] transition-all duration-300 shadow-xs hover:shadow-md hover:scale-105 shrink-0 select-none group/item cursor-pointer">
+    <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-[#8799fb]/30 hover:border-[#8799fb]/80 hover:bg-white text-[#111] transition-all duration-300 shadow-xs hover:shadow-md hover:scale-105 shrink-0 select-none group/item cursor-pointer">
       {/* Skill Icon from skillicons.dev */}
       {skill.iconSlug ? (
         <img
@@ -79,7 +79,7 @@ function SkillPill({ skill }: { skill: SkillItem }) {
       </span>
 
       {/* Category Chip */}
-      <span className="font-mono text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-black/[0.04] text-black/50 group-hover/item:text-black group-hover/item:bg-black/[0.08] transition-colors">
+      <span className="font-mono text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#8799fb]/10 text-[#4353b3] group-hover/item:text-[#25327b] group-hover/item:bg-[#8799fb]/20 transition-colors">
         {skill.category}
       </span>
     </div>
@@ -91,27 +91,23 @@ export default function TechMarquee() {
     <section 
       id="skills" 
       aria-label="Technical Skills Arsenal"
-      className="relative py-10 sm:py-14 border-y border-black/[0.08] bg-[#f2ede4]/30 overflow-hidden"
+      className="relative py-10 sm:py-14 border-y border-[#8799fb]/25 bg-white/[0.22] backdrop-blur-[4px] overflow-hidden"
     >
-      {/* Edge gradient fade masks (Linear / Inspira UI style) */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-44 z-20 bg-gradient-to-r from-[#faf7f3] to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-44 z-20 bg-gradient-to-l from-[#faf7f3] to-transparent" />
-
       {/* Header Eyebrow */}
       <div className="max-w-7xl mx-auto px-6 sm:px-12 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative z-10">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="font-mono text-[11px] sm:text-xs font-bold uppercase tracking-widest text-black/60">
+          <span className="w-2 h-2 rounded-full bg-[#8799fb] animate-pulse" />
+          <span className="font-mono text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#242b58]">
             TECHNICAL ARSENAL & CORE STACK
           </span>
         </div>
-        <span className="font-mono text-[10px] sm:text-xs text-black/45 italic">
-          Hover to pause ticker • Powered by Skill Icons
+        <span className="font-mono text-[10px] sm:text-xs text-[#3a4478]/70 italic">
+          Hover to pause ticker &bull; Powered by Skill Icons
         </span>
       </div>
 
-      {/* Marquee Tracks */}
-      <div className="flex flex-col gap-3.5 sm:gap-4 relative z-10">
+      {/* Marquee Tracks with CSS Mask fade edges */}
+      <div className="flex flex-col gap-3.5 sm:gap-4 relative z-10 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         {/* Track 1: Moving Right (Reverse) */}
         <Marquee speed={36} reverse pauseOnHover repeat={4} className="py-1">
           {trackOneSkills.map((skill) => (
